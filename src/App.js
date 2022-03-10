@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
+import data from "./birthdaycomponents/data.js";
+import Lists from "./birthdaycomponents/Lists.js";
 
-function App() {
+const App = () => {
+  const [people, setPeople] = useState(data);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Lists people={people} setPeople={setPeople} />
     </div>
   );
-}
+};
 
 export default App;
